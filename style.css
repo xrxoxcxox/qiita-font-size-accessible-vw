@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@property --1vw {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+:root {
+  --1vw: 1vw;
+  --vw-to-px: calc(tan(atan2(var(--1vw), 1px)));
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  padding: 4vw;
+}
+
+h1 {
+  font-size: calc(var(--vw-to-px) * 1rem / 16 * 4);
+  /* font-size: 4vw; */
+}
+
+p {
+  font-size: calc(var(--vw-to-px) * 1rem / 16 * 2);
+  /* font-size: 2vw; */
+}
